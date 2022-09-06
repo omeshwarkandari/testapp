@@ -62,8 +62,7 @@
 
          <configuration>
             <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-            <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
-	    <buildArgs>
+            <buildArgs>
         	<ARTIFACT>target/${project.build.finalName}.${project.packaging}</ARTIFACT>
     	    </buildArgs>            
 
