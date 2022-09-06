@@ -1,0 +1,2 @@
+name: dockerapp
+image: <+artifact.image>
