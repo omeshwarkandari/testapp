@@ -28,7 +28,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: dockerimage
-        image: omeshwar/harness-training:latest
+      - name: {{.Values.name}}
+        image: {{.Values.image}}
         ports:
         - containerPort: 8080
