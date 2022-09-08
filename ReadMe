@@ -1,0 +1,14 @@
+while ! docker ps ;do
+echo "Docker not available yet"
+done
+echo "Docker service is up"
+docker ps 
+apk add git
+git --version
+git clone https://github.com/omeshwarkandari/testapp
+cd testapp
+echo '<+secrets.getValue("account.dockerregtoken")>' > dockerregtoken
+cat dockerregtoken | docker login --username omeshwar --password-stdin
+docker build -t harness-training .
+docker tag harness-training omeshwar/harness-training:<+pipeline.sequenceId>
+docker push omeshwar/harness-training:<+pipeline.sequenceId>
