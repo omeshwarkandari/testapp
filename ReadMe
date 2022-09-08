@@ -12,3 +12,8 @@ cat dockerregtoken | docker login --username omeshwar --password-stdin
 docker build -t harness-training .
 docker tag harness-training omeshwar/harness-training:<+pipeline.sequenceId>
 docker push omeshwar/harness-training:<+pipeline.sequenceId>
+
+Note: Reference the Encrypted Text by Identifier for an Encrypted Text secret.
+For Project level Secret: reference the secret in using the secret identifier (ID) in the expression: <+secrets.getValue("your_secret_Id")>
+For Account level Secret: <+secrets.getValue("account.your-secret-Id")>
+For Org level Secret: <+secrets.getValue("org.your-secret-Id")>
