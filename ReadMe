@@ -1,3 +1,6 @@
+How to Run Docker-in-Docker (DIND) in a CI Stage
+
+
 while ! docker ps ;do
 echo "Docker not available yet"
 done
